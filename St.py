@@ -16,9 +16,9 @@ st.markdown("""
 
 # === Завантаження файлів ===
 st.sidebar.header("Завантаж CSV-файли")
-fin_file = st.sidebar.file_uploader("Фінансові показники", type=["csv"])
-med_file = st.sidebar.file_uploader("Медійні показники", type=["csv"])
-rep_file = st.sidebar.file_uploader("Публічний імідж", type=["csv"])
+#fin_file = st.sidebar.file_uploader("Фінансові показники", type=["csv"])
+#med_file = st.sidebar.file_uploader("Медійні показники", type=["csv"])
+#rep_file = st.sidebar.file_uploader("Публічний імідж", type=["csv"])
 
 # === Зчитування даних ===
 def read_csv(file):
@@ -26,9 +26,9 @@ def read_csv(file):
         return pd.read_csv(file)
     return pd.DataFrame()
 
-fin_df = read_csv(fin_file)
-med_df = read_csv(med_file)
-rep_df = read_csv(rep_file)
+fin_df = read_csv("finance.csv")
+med_df = read_csv("media.csv")
+rep_df = read_csv("reputation.csv")
 
 if fin_df.empty and med_df.empty and rep_df.empty:
     st.info("⬆️ Завантаж хоча б один CSV-файл для початку роботи.")
