@@ -15,7 +15,7 @@ st.markdown("""
 """)
 
 # === Завантаження файлів ===
-st.sidebar.header("Завантаж CSV-файли")
+#st.sidebar.header("Завантаж CSV-файли")
 #fin_file = st.sidebar.file_uploader("Фінансові показники", type=["csv"])
 #med_file = st.sidebar.file_uploader("Медійні показники", type=["csv"])
 #rep_file = st.sidebar.file_uploader("Публічний імідж", type=["csv"])
@@ -30,9 +30,9 @@ fin_df = read_csv("finance.csv")
 med_df = read_csv("media.csv")
 rep_df = read_csv("reputation.csv")
 
-if fin_df.empty and med_df.empty and rep_df.empty:
-    st.info("⬆️ Завантаж хоча б один CSV-файл для початку роботи.")
-    st.stop()
+#if fin_df.empty and med_df.empty and rep_df.empty:
+#    st.info("⬆️ Завантаж хоча б один CSV-файл для початку роботи.")
+#    st.stop()
 
 # === Об’єднання ===
 dfs = [df for df in [fin_df, med_df, rep_df] if not df.empty]
